@@ -6,7 +6,7 @@ request(userInput[0], (error, response, body) => {
   // console.log('Error report: ',error);
   // console.log('Status code: ', response.statusCode);
   fs.writeFile(userInput[1], body, (err) => {
-    if (err) {throw err};
-    console.log(`File has successfully been downloaded. It was ${Buffer.byteLength(body)} bytes`);
+    if (error) {throw error};
+    console.log(`Downloaded and saved ${Buffer.byteLength(body)} bytes to ${userInput[1]}`);
   });
 });
